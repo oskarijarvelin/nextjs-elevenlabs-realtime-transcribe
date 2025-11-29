@@ -292,19 +292,18 @@ All styles are in `app/page.tsx` using styled-jsx:
 
 ```sh
 # Run development server
+npm run dev
+# or with pnpm
 pnpm dev
 
 # Build for production
-pnpm build
+npm run build
 
 # Start production server
-pnpm start
+npm run start
 
 # Type checking
-pnpm tsc --noEmit
-
-# Linting (if configured)
-pnpm lint
+npx tsc --noEmit
 ```
 
 ## 🚀 Production Deployment
@@ -424,7 +423,52 @@ Contributions are welcome! Areas for improvement:
 - [ ] Transcript editing before export
 - [ ] Audio playback sync with transcript
 
-## 📝 License
+## � Troubleshooting
+
+### Build Errors
+
+**Problem**: `ERESOLVE could not resolve` errors during `npm install`
+
+**Solution**: The project uses Next.js 15 with React 19 stable. If you encounter dependency conflicts:
+
+```sh
+# Remove old dependencies
+rm -rf node_modules package-lock.json
+# or on Windows:
+# rmdir /s /q node_modules
+# del package-lock.json
+
+# Clean install
+npm install
+```
+
+### Microphone Access Issues
+
+**Problem**: Microphone doesn't work on mobile
+
+**Solution**: Ensure you're using HTTPS. See the [Mobile Usage](#-mobile-usage) section for setup instructions.
+
+**Problem**: "Permission denied" error
+
+**Solution**: 
+1. Check browser permissions for microphone access
+2. On mobile, ensure HTTPS is enabled
+3. Try a different browser
+
+### API Connection Issues
+
+**Problem**: "Invalid API key" error
+
+**Solution**:
+1. Verify your API key at [ElevenLabs Dashboard](https://elevenlabs.io/app/settings/api-keys)
+2. Check `.env.local` has correct key format
+3. Restart the dev server after changing environment variables
+
+**Problem**: "QUOTA_EXCEEDED" error
+
+**Solution**: Your ElevenLabs API quota is exceeded. Check your usage at the dashboard or use a different API key.
+
+## �📝 License
 
 This project is open source and available under the MIT License.
 
