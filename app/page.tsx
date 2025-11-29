@@ -307,7 +307,13 @@ export default function Page() {
       return;
     }
 
-    const success = exportAsPDF(transcriptsWithTimestamps, t.title, t.confirmedTranscripts);
+    const success = exportAsPDF(
+      transcriptsWithTimestamps, 
+      t.title, 
+      t.confirmedTranscripts,
+      t.pdfDate,
+      t.pdfTotalTranscripts
+    );
     if (!success) {
       setNotification({
         message: 'Please allow popups to export PDF',

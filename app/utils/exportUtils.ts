@@ -40,7 +40,13 @@ export function exportAsCSV(transcripts: TranscriptItem[], filename: string = 't
  * Exports transcripts as PDF via print dialog
  * Opens a new window with formatted HTML for printing
  */
-export function exportAsPDF(transcripts: TranscriptItem[], title: string, confirmedTitle: string): boolean {
+export function exportAsPDF(
+  transcripts: TranscriptItem[], 
+  title: string, 
+  confirmedTitle: string,
+  dateLabel: string = 'Date',
+  totalLabel: string = 'Total Transcripts'
+): boolean {
   const printWindow = window.open('', '', 'width=800,height=600');
   if (!printWindow) {
     return false;
@@ -110,8 +116,8 @@ export function exportAsPDF(transcripts: TranscriptItem[], title: string, confir
     <body>
       <h1>${confirmedTitle}</h1>
       <div class="meta">
-        <strong>Date:</strong> ${currentDate}<br>
-        <strong>Total Transcripts:</strong> ${transcripts.length}
+        <strong>${dateLabel}:</strong> ${currentDate}<br>
+        <strong>${totalLabel}:</strong> ${transcripts.length}
       </div>
       ${transcripts.map((item, index) => `
         <div class="transcript">

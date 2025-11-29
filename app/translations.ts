@@ -47,6 +47,8 @@ export interface Translations {
   exportSettings: string;
   exportPDF: string;
   exportCSV: string;
+  pdfDate: string;
+  pdfTotalTranscripts: string;
   noTranscriptsToExport: string;
   transcriptsExported: string;
   browserNotSupported: string;
@@ -102,6 +104,8 @@ export const translations: Record<Language, Translations> = {
     exportSettings: "Export Transcripts",
     exportPDF: "Download as PDF",
     exportCSV: "Download as CSV",
+    pdfDate: "Date",
+    pdfTotalTranscripts: "Total Transcripts",
     noTranscriptsToExport: "No transcripts to export",
     transcriptsExported: "Transcripts exported successfully!",
     browserNotSupported: "Your browser does not support audio recording",
@@ -155,6 +159,8 @@ export const translations: Record<Language, Translations> = {
     exportSettings: "Vie transkriptiot",
     exportPDF: "Lataa PDF-tiedostona",
     exportCSV: "Lataa CSV-tiedostona",
+    pdfDate: "Päivämäärä",
+    pdfTotalTranscripts: "Transkriptioiden määrä",
     noTranscriptsToExport: "Ei transkriptioita vietäväksi",
     transcriptsExported: "Transkriptiot viety onnistuneesti!",
     browserNotSupported: "Selaimesi ei tue äänentallennusta",
