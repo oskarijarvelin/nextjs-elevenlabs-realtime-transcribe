@@ -46,7 +46,7 @@ export function exportAsPDF(transcripts: TranscriptItem[], title: string, confir
     return false;
   }
 
-  const currentDate = new Date().toLocaleDateString('en-US', { 
+  const currentDate = new Date().toLocaleDateString(undefined, { 
     year: 'numeric', 
     month: 'long', 
     day: 'numeric' 
@@ -58,7 +58,7 @@ export function exportAsPDF(transcripts: TranscriptItem[], title: string, confir
     <html lang="en">
     <head>
       <meta charset="utf-8">
-      <title>Transcripts - ${currentDate}</title>
+      <title>${confirmedTitle} - ${currentDate}</title>
       <style>
         @page {
           margin: 2cm;
@@ -76,10 +76,11 @@ export function exportAsPDF(transcripts: TranscriptItem[], title: string, confir
           border-bottom: 3px solid #2196F3;
           padding-bottom: 10px;
           margin-bottom: 30px;
+          font-size: 24px;
         }
         .meta {
           color: #666;
-          font-size: 14px;
+          font-size: 13px;
           margin-bottom: 30px;
         }
         .transcript {
@@ -92,11 +93,11 @@ export function exportAsPDF(transcripts: TranscriptItem[], title: string, confir
         .timestamp {
           color: #2196F3;
           font-weight: 600;
-          font-size: 14px;
+          font-size: 13px;
           margin-bottom: 8px;
         }
         .text {
-          font-size: 16px;
+          font-size: 14px;
           line-height: 1.8;
         }
         @media print {
@@ -107,7 +108,7 @@ export function exportAsPDF(transcripts: TranscriptItem[], title: string, confir
       </style>
     </head>
     <body>
-      <h1>🎙️ ${title} - ${confirmedTitle}</h1>
+      <h1>${confirmedTitle}</h1>
       <div class="meta">
         <strong>Date:</strong> ${currentDate}<br>
         <strong>Total Transcripts:</strong> ${transcripts.length}
