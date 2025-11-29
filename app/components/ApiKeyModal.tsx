@@ -53,9 +53,28 @@ export default function ApiKeyModal({
         <p style={{ 
           color: "rgba(128, 128, 128, 0.8)",
           fontSize: "0.9rem",
-          marginBottom: "1.5rem"
+          marginBottom: "1rem"
         }}>
           {t.apiKeyModalDesc}
+        </p>
+        <p style={{ 
+          marginBottom: "1.5rem"
+        }}>
+          <a 
+            href="https://elevenlabs.io/app/settings/api-keys" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            style={{
+              color: "#2196F3",
+              textDecoration: "none",
+              fontSize: "0.9rem",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.25rem",
+            }}
+          >
+            🔗 {t.getApiKey}
+          </a>
         </p>
         <input
           type="password"

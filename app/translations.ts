@@ -37,6 +37,7 @@ export interface Translations {
   microphoneChanged: string;
   apiKeyModalTitle: string;
   apiKeyModalDesc: string;
+  getApiKey: string;
   cancel: string;
   save: string;
   poweredBy: string;
@@ -91,6 +92,7 @@ export const translations: Record<Language, Translations> = {
     microphoneChanged: "Microphone changed",
     apiKeyModalTitle: "ElevenLabs API Key",
     apiKeyModalDesc: "Enter your own ElevenLabs API key. The key is saved only in your browser (localStorage) and is not sent to the server.",
+    getApiKey: "Get API Key from ElevenLabs",
     cancel: "Cancel",
     save: "Save",
     poweredBy: "Powered by ElevenLabs Scribe v2",
@@ -143,6 +145,7 @@ export const translations: Record<Language, Translations> = {
     microphoneChanged: "Mikrofoni vaihdettu",
     apiKeyModalTitle: "ElevenLabs API-avain",
     apiKeyModalDesc: "Syötä oma ElevenLabs API-avaimesi. Avain tallennetaan vain selaimeesi (localStorage) eikä sitä lähetetä palvelimelle.",
+    getApiKey: "Hae API-avain ElevenLabsista",
     cancel: "Peruuta",
     save: "Tallenna",
     poweredBy: "Powered by ElevenLabs Scribe v2",
